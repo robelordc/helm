@@ -1,1 +1,31 @@
+# Generic project to test the deploy template
+include:
+  - project: dtci-infraeng/enable-eng/cdeng/conveyor/templates/pipelines/deploy/generic-deploy
+    ref: feature-test-simple-helm
+    file:
+      - pipeline/pipeline.yaml
 
+variables:
+  DEPLOYMENT_TYPE: "helm"
+  CLUSTER_NAME: "cdeng-nonprod-glr-eks"
+  CHART_NAME: "my-testing-chart"
+  CHART_DIR: "./my-chart/"
+  NAMESPACE: "helm-poc-02"
+
+  # CFN_STACK_NAME: "conveyor-generic-deploy-test"
+  # PARAM_FILE_DEV: cloudformation/vars/parameters-dev.json
+  # PARAM_FILE_QA: cloudformation/vars/parameters-qa.json
+  # PARAM_FILE_STAGING: cloudformation/vars/parameters-staging.json
+  # PARAM_FILE_PROD: cloudformation/vars/parameters-prod.json
+
+  # DEV
+  ACCOUNT_ID_DEV: "646374784610" 
+
+  # QA
+  ACCOUNT_ID_QA: "646374784610"
+
+  # STAGING
+  ACCOUNT_ID_STAGING: "646374784610"
+
+  # PROD
+  ACCOUNT_ID_PROD: "646374784610"
